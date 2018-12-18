@@ -1,0 +1,21 @@
+.Modal {
+    position: fixed;
+    z-index: 9999;
+    /* border: 1px solid #eee; */
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 1);    
+    text-align: center;
+    box-sizing: border-box;
+    top: 10%;
+    left: 33%;
+    width: 29%;
+    transition: all 0.3s ease-out;
+}
+
+.ModalOpen {
+    animation: openModal 0.4s ease-out forwards;
+}
+
+.ModalClosed {
+    animation: closeModal 0.4s ease-out forwards;
+}
