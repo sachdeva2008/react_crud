@@ -11,12 +11,13 @@ class Dashboard extends React.Component {
         let dataSet = null;
         if(this.props.dataSet){
             dataSet = this.props.dataSet.map((currRow,index)=>{
-                return  <tr>
+                return  <tr key={currRow.id}>
                         <td>{index+1}</td>
                         <td>{currRow.email}</td>
                         <td>{currRow.name}</td>
-                        <td><Button type="button" name="edit" text="Edit" /></td>
-                        <td><Button type="button" name="delete" text="Delete" /></td>
+                        <td><Button type="button" name="edit" text="Edit" onClick={this.props.editHandler.bind(this,currRow.id)} /></td>
+                        <td><Button type="button" name="delete"
+                             text="Delete" onClick = {this.props.deleteRecordHandler.bind(this,currRow.id)}/></td>
                     </tr>
             });
         }
@@ -33,9 +34,13 @@ class Dashboard extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {dataSet}
+                <React.Fragment key="123">
+                       {dataSet}   
+                       </React.Fragment>   
+                    
                 </tbody>
             </table>
+           
             
         );
     }
